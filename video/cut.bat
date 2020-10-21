@@ -1,5 +1,4 @@
 @echo off
-color 04
 echo ***********************************************************
 echo *                                                         *
 echo *  Bienvenue dans l'utilitaire de decoupe video Proximum  *
