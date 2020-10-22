@@ -5,11 +5,13 @@ TUTORIEL POUR DECOUPER OU COUVERTIR UNE VIDEO
 SI VOUS SOUHAITEZ UNIQUEMENT CONVERTIR LA VIDEO PASSER A L'ETAPE 3
 
 
-# 1 Ouvrez le fichier vidéo avec votre lecteur préféré.
+# 1 Afin de découper la vidéo, vous devez repérer le moment où vous voulez faire débuter la vidéo et où vous souhaitez la faire terminer.
+    Ouvrez donc le fichier vidéo avec votre lecteur préféré afin de reprérer ces moments.
 
-# 2 Repérer le début et la fin de la vidéo au format "HH:MM:SS" ou "MM:SS" ou "SS"
+# 2 Notez le début et la fin de la vidéo au format "HH:MM:SS" ou "MM:SS" ou "SS".
+    Vous pouvez ensuite fermer votre lecteur vidéo.
 
-# 3 Ouvrez le programme nommé "video-converter.bat" ou "video-converter"
+# 3 Ouvrez le programme nommé "video-converter.bat" ou "video-converter".
 
 # 4 Suivez les instructions, appuyez à chaque fois sur "Entrer" pour valider vos choix.
 

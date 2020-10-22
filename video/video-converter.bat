@@ -1,14 +1,14 @@
 @echo off
-echo ***********************************************************
-echo *                                                         *
-echo *  Bienvenue dans l'utilitaire de decoupe video Proximum  *
-echo *                   version 1.1.0                         *
-echo *                                                         *
-echo ***********************************************************
+echo ************************************************************
+echo *                                                          *
+echo *  Bienvenue dans l'utilitaire de decoupe video Proximum   *
+echo *                   version 2.0.0                          *
+echo *                                                          *
+echo ************************************************************
 echo *  
 echo *  Cliquez sur "Entrer" a chaque etapes pour valider vos choix.
 echo *  A tout moment tappez ctrl+c pour sortir du programme.
-echo *
+echo *  
 echo *  Que souhaitez vous faire ? 
 echo *  
 echo *  1. Convertir une video
@@ -20,13 +20,13 @@ IF errorlevel 1 GOTO :parametresError
 
 echo *  
 echo *  Bonne conversion!
-echo *
-echo ***********************************************************
+echo *  
+echo ************************************************************
 
 echo *
-set /p inputFile=* Glissez et deposer la video a traiter ici, puis tappez sur "Entrer" : 
-IF "%inputFile%"=="" GOTO :parametresError
-set outputFile=%inputFile:~0,-4%-convert.mp4
+set /p "inputFile=* Glissez et deposez la video a traiter ici, puis tappez sur 'Entrer' : "
+IF !inputFile!=="" GOTO :parametresError
+set outputFile=%inputFile:~0,-5%-convert.mp4"
 
 echo * 
 echo * La video a traiter sera %inputFile%
@@ -51,7 +51,7 @@ IF "%start%"=="" IF "%end%"=="" GOTO :simpleConversion
 IF "%start%"=="" GOTO :parametresError
 IF "%end%"=="" GOTO :parametresError
 
-ffmpeg.exe -t %end% -i %inputFile% -ss %start% -vcodec libx264 -acodec copy -preset ultrafast -filter:v fps=fps=25 -b:v 800k %outputFile%
+ffmpeg.exe -t %end% -i %inputFile% -ss %start% -vcodec libx264 -acodec copy -preset ultrafast -filter:v fps=fps=25 -crf 40 %outputFile%
 GOTO :aurevoirVideo
 
 :simpleConversion
@@ -66,7 +66,7 @@ GOTO :aurevoir
 
 :aurevoirVideo
 echo * 
-echo *  La video convertie se trouve ici : "%outputFile%"
+echo *  La video convertie se trouve ici : %outputFile%
 
 :aurevoir
 echo *
