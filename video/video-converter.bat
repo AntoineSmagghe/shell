@@ -48,7 +48,7 @@ ffmpeg.exe -t %end% -i %inputFile% -ss %start% -vcodec libx264 -acodec copy -pre
 GOTO :aurevoir
 
 :simpleConversion
-ffmpeg.exe -i %inputFile% -vcodec libx264 -acodec copy -preset ultrafast -filter:v fps=fps=25 -b 800k %outputFile%
+ffmpeg.exe -i %inputFile% -vcodec libx264 -acodec copy -preset ultrafast -filter:v fps=fps=25 -b:v 800k %outputFile%
 GOTO :aurevoir
 
 :parametresError
