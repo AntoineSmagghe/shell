@@ -51,11 +51,11 @@ IF "%start%"=="" IF "%end%"=="" GOTO :simpleConversion
 IF "%start%"=="" GOTO :parametresError
 IF "%end%"=="" GOTO :parametresError
 
-ffmpeg.exe -t %end% -i %inputFile% -ss %start% -vcodec libx264 -acodec copy -preset ultrafast -filter:v fps=fps=25 -crf 40 %outputFile%
+ffmpeg.exe -t %end% -i %inputFile% -ss %start% -vcodec libx264 -acodec copy -preset ultrafast -filter:v fps=fps=25 -b:v 1000k %outputFile%
 GOTO :aurevoirVideo
 
 :simpleConversion
-ffmpeg.exe -i %inputFile% -vcodec libx264 -acodec copy -preset ultrafast -filter:v fps=fps=25 -b:v 800k %outputFile%
+ffmpeg.exe -i %inputFile% -vcodec libx264 -acodec copy -preset ultrafast -filter:v fps=fps=25 -b:v 1000k %outputFile%
 GOTO :aurevoirVideo
 
 :parametresError
