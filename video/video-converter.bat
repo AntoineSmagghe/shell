@@ -2,7 +2,7 @@
 echo ************************************************************
 echo *                                                          *
 echo *  Bienvenue dans l'utilitaire de decoupe video Proximum   *
-echo *                   version 2.0.0                          *
+echo *                   version 2.0.1                          *
 echo *                                                          *
 echo ************************************************************
 echo *  
@@ -35,13 +35,13 @@ echo ************************************************************
 IF "%choice%"=="1" GOTO :simpleConversion
 
 echo *
-set /p start=* Inscrire le debut de la video au format (HH:MM:SS), puis tappez sur "Entrer" : 
+set /p start=* Inscrire le debut de la video au format HH:MM:SS, puis tappez sur "Entrer" : 
 echo * 
 echo * La video commencera a %start%
 echo * 
 echo ************************************************************
 echo *
-set /p end=* Inscrire la fin de la video au format (HH:MM:SS), puis tappez sur "Entrer" : 
+set /p end=* Inscrire la fin de la video au format HH:MM:SS, puis tappez sur "Entrer" : 
 echo * 
 echo * La video terminera a %end%
 echo *
