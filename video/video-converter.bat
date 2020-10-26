@@ -60,8 +60,8 @@ GOTO :aurevoirVideo
 
 :parametresError
 echo *
-echo *  Erreur: veuillez entrer de nouveau 
-echo *  les commandes pour convertir ou couper une video.
+echo *  Erreur: veuillez entrer de nouveau les commandes pour convertir
+echo *  ou couper une video.
 GOTO :aurevoir
 
 :aurevoirVideo
