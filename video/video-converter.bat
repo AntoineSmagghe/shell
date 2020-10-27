@@ -7,14 +7,14 @@ echo *                                                          *
 echo ************************************************************
 echo *  
 echo *  Cliquez sur "Entrer" a chaque etapes pour valider vos choix.
-echo *  A tout moment tappez ctrl+c pour sortir du programme.
+echo *  A tout moment tapez ctrl+c pour sortir du programme.
 echo *  
 echo *  Que souhaitez vous faire ? 
 echo *  
 echo *  1. Convertir une video
 echo *  2. Couper et convertir une video
 echo *  
-set /p choice=*  Tapper le numero qui correspond a votre choix (1 ou 2), puis tappez sur "Entrer" : 
+set /p choice=*  Taper le numero qui correspond a votre choix (1 ou 2), puis tapez sur "Entrer" : 
 cscript //nologo src/match.js "^[12]$" "%choice%"
 IF errorlevel 1 GOTO :parametresError
 
@@ -24,7 +24,7 @@ echo *
 echo ************************************************************
 
 echo *
-set /p "inputFile=* Glissez et deposez la video a traiter ici, puis tappez sur 'Entrer' : "
+set /p "inputFile=* Glissez et deposez la video a traiter ici, puis tapez sur 'Entrer' : "
 IF !inputFile!=="" GOTO :parametresError
 set outputFile=%inputFile:~0,-5%-convert.mp4"
 
@@ -35,13 +35,13 @@ echo ************************************************************
 IF "%choice%"=="1" GOTO :simpleConversion
 
 echo *
-set /p start=* Inscrire le debut de la video au format HH:MM:SS, puis tappez sur "Entrer" : 
+set /p start=* Inscrire le debut de la video au format HH:MM:SS, puis tapez sur "Entrer" : 
 echo * 
 echo * La video commencera a %start%
 echo * 
 echo ************************************************************
 echo *
-set /p end=* Inscrire la fin de la video au format HH:MM:SS, puis tappez sur "Entrer" : 
+set /p end=* Inscrire la fin de la video au format HH:MM:SS, puis tapez sur "Entrer" : 
 echo * 
 echo * La video terminera a %end%
 echo *
