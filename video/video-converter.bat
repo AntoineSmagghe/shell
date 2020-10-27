@@ -2,7 +2,7 @@
 echo ************************************************************
 echo *                                                          *
 echo *  Bienvenue dans l'utilitaire de decoupe video Proximum   *
-echo *                   version 2.0.1                          *
+echo *                   version 2.0.2                          *
 echo *                                                          *
 echo ************************************************************
 echo *  
