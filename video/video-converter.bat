@@ -1,5 +1,5 @@
 @echo off
-chcp 65001
+chcp 65001 > nul
 echo ************************************************************
 echo *                                                          *
 echo *  Bienvenue dans l'utilitaire de découpe video Proximum   *
@@ -25,9 +25,9 @@ echo *
 echo ************************************************************
 
 echo *
-set /p "inputFile=* Glissez et deposez la video a traiter ici, puis tapez sur 'Entrer' : "
-IF "%inputFile%"=="" GOTO :parametresError
-set outputFile=%inputFile:~0,-5%-convert.mp4
+set /p "inputFile=* Glissez et déposez la vidéo a traiter ici, puis tapez sur 'Entrer' : "
+IF !inputFile!=="" GOTO :parametresError
+set outputFile=%inputFile:~0,-5%-convert.mp4"
 
 echo * 
 echo * La vidéo à traiter sera [94m%inputFile%[0m
@@ -53,6 +53,7 @@ IF "%start%"=="" GOTO :parametresError
 IF "%end%"=="" GOTO :parametresError
 
 set startTime=%time%
+@echo on
 ffmpeg.exe -t %end% -i %inputFile% -ss %start% -vcodec libx264 -acodec copy -preset ultrafast -filter:v fps=fps=25 -b:v 1000k %outputFile%
 set endTime=%time%
 GOTO :aurevoirVideo

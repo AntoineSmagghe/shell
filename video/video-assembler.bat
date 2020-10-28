@@ -38,10 +38,11 @@ echo *  [91mde les assembler ![0m
 echo *  
 echo *  Cliquez sur [92m'Entrer'[0m à chaque étapes pour valider vos choix.
 echo *  A tout moment tapez [91mctrl+c[0m pour sortir du programme.
-
+echo *
+pause
 echo *
 set /p "inputFile1=*  Glissez et déposez la première vidéo ici, puis tapez sur [92m'Entrer'[0m : "
-IF "%inputFile1%"=="" GOTO :parametresError
+IF !inputFile1!=="" GOTO :parametresError
 
 echo * 
 echo * La première vidéo est [94m%inputFile1%[0m
@@ -50,19 +51,20 @@ echo ************************************************************
 
 echo *
 set /p "inputFile2=*  Glissez et déposez la seconde vidéo ici, puis tapez sur [92m'Entrer'[0m : "
-IF "%inputFile2%"=="" GOTO :parametresError
+IF !inputFile2!=="" GOTO :parametresError
 
 echo * 
 echo * La seconde vidéo est [94m%inputFile2%[0m
 echo *
 echo ************************************************************
-set outputFile=%inputFile1:~0,-5%-%inputFile2:~0,-5%.mp4
+set outputFile=%inputFile1:~0,-5%-join.mp4"
 
 :joinvideo
 set startTime=%time%
-echo file "%inputFile1%" > tmp/assembly.tmp
-echo file "%inputFile2%" >> tmp/assembly.tmp
-ffmpeg.exe -safe 0 -f concat -i tmp/assembly.tmp -c copy "%outputFile%"
+echo file %inputFile1:\=\\% > assembly.tmp
+echo file %inputFile2:\=\\% >> assembly.tmp
+ffmpeg.exe -safe 0 -f concat -i assembly.tmp -c copy %outputFile%
+del assembly.tmp
 set endTime=%time%
 
 :parametresError
