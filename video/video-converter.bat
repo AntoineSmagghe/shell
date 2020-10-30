@@ -3,7 +3,7 @@ chcp 65001 > nul
 echo ************************************************************
 echo *                                                          *
 echo *  Bienvenue dans l'utilitaire de découpe video Proximum   *
-echo *                   version 2.0.2                          *
+echo *                   version 2.1.0                          *
 echo *                                                          *
 echo ************************************************************
 echo *  

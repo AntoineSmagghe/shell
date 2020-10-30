@@ -26,7 +26,7 @@ chcp 65001 > nul
 echo **************************************************************
 echo *                                                            *
 echo *  Bienvenue dans l'utilitaire d'assemblage vidéo Proximum   *
-echo *                   version 2.0.2                            *
+echo *                   version 1.0.0                            *
 echo *                                                            *
 echo **************************************************************
 echo *
