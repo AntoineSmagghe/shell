@@ -1,5 +1,36 @@
 @echo off
-chcp 65001 > nul
+chcp 65001 > nul    
+echo                                                                     ..;===+.
+echo                                                                 .:=iiiiii=+=
+echo                                                              .=i))=;::+)i=+,
+echo                                                           ,=i);)I)))I):=i=;
+echo                                                        .=i==))))ii)))I:i++
+echo                                                      +)+))iiiiiiii))I=i+:'
+echo                                 .,:;;++++++;:,.       )iii+:::;iii))+i='
+echo                              .:;++=iiiiiiiiii=++;.    =::,,,:::=i));=+'
+echo                            ,;+==ii)))))))))))ii==+;,      ,,,:=i))+=:
+echo                          ,;+=ii))))))IIIIII))))ii===;.    ,,:=i)=i+
+echo                         ;+=ii)))IIIIITIIIIII))))iiii=+,   ,:=));=,
+echo                       ,+=i))IIIIIITTTTTITIIIIII)))I)i=+,,:+i)=i+
+echo                      ,+i))IIIIIITTTTTTTTTTTTI))IIII))i=::i))i='                            
+echo                 ____  _________  _  __(_)___ ___  __  ______ ___      
+echo                / __ \/ ___/ __ \| |/_/ / __ `__ \/ / / / __ `__ \     
+echo               / /_/ / /  / /_/ />  </ / / / / / / /_/ / / / / / /     
+echo              / .___/_/   \____/_/|_/_/_/ /_/ /_/\__,_/_/ /_/ /_/      
+echo             /_/         
+echo              =;)i=: =)ITTTTLTTI=:i))I)TTTLLLTTTTTII)i;
+echo            +i)ii::   +)IIITI+:+i)I))TTTTLLTTTTTII))=,
+echo          :=;)i=:      ,i++::i))I)ITTTTTTTTTTIIII)=+'
+echo        .+ii)i=:      ,,::=i)))iIITTTTTTTTIIIII)=+
+echo       ,==)ii=;    ,:::=ii)i)iIIIITIIITIIII))i+:'
+echo      +=:))i==   :;=iii)+)=  `:i)))IIIII)ii+'
+echo    .+=:))iiiiiiii)))+ii;
+echo   .+=;))iiiiii)));ii+
+echo  .+=i:)))))))=+ii+
+echo .;==i+::::=)i=;
+echo ,+==iiiiii+,
+echo `+=+++;`
+echo *
 echo ************************************************************
 echo *                                                          *
 echo *        Bienvenue dans l'utilitaire video Proximum        *
