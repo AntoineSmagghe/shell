@@ -31,7 +31,8 @@ chcp 65001 > nul
 @REM echo **************************************************************
 echo *
 echo *  [91m!!! Les vidéos à assembler doivent être du même format et du même encodage !!![0m
-echo *  
+echo *  [91m!!! Les caractères spéciaux sont interdits dans les noms et les chemins d'accès !!![0m
+echo *
 echo *  [93mSi vous souhaitez assembler deux vidéos de différents[0m
 echo *  [93mformats / encodage, vous devez convertir les deux morceaux[0m
 echo *  [93mavant de les assembler ![0m
