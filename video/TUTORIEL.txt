@@ -1,8 +1,8 @@
 video-converter 
-version 2.0.2
+version 2.1.1
 
 TUTORIEL POUR DECOUPER OU COUVERTIR UNE VIDEO
-SI VOUS SOUHAITEZ UNIQUEMENT CONVERTIR LA VIDEO PASSER A L'ETAPE 3
+SI VOUS SOUHAITEZ UNIQUEMENT CONVERTIR / COMPRESSER LA VIDEO, PASSEZ A L'ETAPE 3
 
 
 # 1 Afin de découper la vidéo, vous devez repérer le moment où vous voulez faire débuter la vidéo et où vous souhaitez la faire terminer.

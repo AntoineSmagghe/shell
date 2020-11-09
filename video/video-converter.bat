@@ -3,7 +3,7 @@ chcp 65001 > nul
 echo ************************************************************
 echo *                                                          *
 echo *        Bienvenue dans l'utilitaire video Proximum        *
-echo *                   version 2.1.0                          *
+echo *                   version 2.1.1                          *
 echo *                                                          *
 echo ************************************************************
 echo *  
@@ -13,8 +13,8 @@ echo *  A tout moment tapez [91mctrl+c[0m pour sortir du programme.
 echo *  
 echo *  Que souhaitez vous faire ? 
 echo *  
-echo *  [1;94m1. Convertir une vidéo[0m
-echo *  [1;94m2. Couper et convertir une vidéo[0m
+echo *  [1;94m1. Convertir/compresser une vidéo[0m
+echo *  [1;94m2. Couper et convertir/compresser une vidéo[0m
 echo *  [1;94m3. Joindre deux vidéos[0m
 echo *  [1;94m0. Sortir[0m
 echo *  
