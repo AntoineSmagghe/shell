@@ -1,37 +1,8 @@
 @echo off
 chcp 65001 > nul
-@REM echo                             ______
-@REM echo                            /     /\
-@REM echo                           /     /##\
-@REM echo                          /     /####\
-@REM echo                         /     /######\
-@REM echo                        /     /########\
-@REM echo                       /     /##########\
-@REM echo                      /     /#####/\#####\
-@REM echo                     /     /#####/++\#####\
-@REM echo                    /     /#####/++++\#####\
-@REM echo                   /     /#####/\+++++\#####\
-@REM echo                  /     /#####/  \+++++\#####\
-@REM echo                 /     /#####/    \+++++\#####\
-@REM echo                /     /#####/      \+++++\#####\
-@REM echo               /     /#####/        \+++++\#####\
-@REM echo              /     /#####/__________\+++++\#####\
-@REM echo             /                        \+++++\#####\
-@REM echo            /__________________________\+++++\####/
-@REM echo            \+++++++++++++++++++++++++++++++++\##/
-@REM echo             \+++++++++++++++++++++++++++++++++\/
-@REM echo              ``````````````````````````````````
-@REM echo *
-@REM echo *
-@REM echo **************************************************************
-@REM echo *                                                            *
-@REM echo *  Bienvenue dans l'utilitaire d'assemblage vidéo Proximum   *
-@REM echo *                   version 1.0.0                            *
-@REM echo *                                                            *
-@REM echo **************************************************************
 echo *
-echo *  [91m!!! Les vidéos à assembler doivent être du même format et du même encodage !!![0m
-echo *  [91m!!! Les caractères spéciaux sont interdits dans les noms et les chemins d'accès !!![0m
+echo *  [91mLes vidéos à assembler doivent être du même format et du même encodage[0m
+echo *  [91mLes caractères spéciaux sont interdits dans les noms et les chemins d'accès[0m
 echo *
 echo *  [93mSi vous souhaitez assembler deux vidéos de différents[0m
 echo *  [93mformats / encodage, vous devez convertir les deux morceaux[0m
@@ -40,7 +11,8 @@ echo *
 echo *
 set /p "inputFile1=*  Glissez et déposez la première vidéo ici, puis tapez sur [92m'Entrer'[0m : "
 IF !inputFile1!=="" GOTO :parametresError
-set inputFile1=%inputFile1:"='%
+set inputFile1=%inputFile1:"=%
+@REM set inputFile1=%inputFile1:'=\'%
 set inputFile1=%inputFile1:\=\\%
 set inputFile1=%inputFile1: =\ %
 
@@ -52,7 +24,8 @@ echo ************************************************************
 echo *
 set /p "inputFile2=*  Glissez et déposez la seconde vidéo ici, puis tapez sur [92m'Entrer'[0m : "
 IF !inputFile2!=="" GOTO :parametresError
-set inputFile2=%inputFile2:"='%
+set inputFile2=%inputFile2:"=%
+@REM set inputFile2=%inputFile2:'=\'%
 set inputFile2=%inputFile2:\=\\%
 set inputFile2=%inputFile2: =\ %
 
@@ -64,11 +37,11 @@ set outputFile=%inputFile1:~0,-5%-join.mp4
 
 :joinvideo
 cd src/
-echo file %inputFile1% > assembly.tmp
-echo file %inputFile2% >> assembly.tmp
+echo file %inputFile1% > assembly.txt
+echo file %inputFile2% >> assembly.txt
 echo %outputFile%
-ffmpeg.exe -safe 0 -f concat -i assembly.tmp -c copy %outputFile%
-del assembly.tmp
+ffmpeg.exe -f concat -safe 0 -i assembly.txt -c copy %outputFile%
+del assembly.txt
 GOTO :aurevoirVideo
 
 :parametresError

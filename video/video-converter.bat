@@ -1,42 +1,59 @@
 @echo off
 chcp 65001 > nul    
-echo                                                                     ..;===+.
-echo                                                                 .:=iiiiii=+=
-echo                                                              .=i))=;::+)i=+,
-echo                                                           ,=i);)I)))I):=i=;
-echo                                                        .=i==))))ii)))I:i++
-echo                                                      +)+))iiiiiiii))I=i+:'
-echo                                 .,:;;++++++;:,.       )iii+:::;iii))+i='
-echo                              .:;++=iiiiiiiiii=++;.    =::,,,:::=i));=+'
-echo                            ,;+==ii)))))))))))ii==+;,      ,,,:=i))+=:
-echo                          ,;+=ii))))))IIIIII))))ii===;.    ,,:=i)=i+
-echo                         ;+=ii)))IIIIITIIIIII))))iiii=+,   ,:=));=,
-echo                       ,+=i))IIIIIITTTTTITIIIIII)))I)i=+,,:+i)=i+
-echo                      ,+i))IIIIIITTTTTTTTTTTTI))IIII))i=::i))i='                            
-echo                 ____  _________  _  __(_)___ ___  __  ______ ___      
-echo                / __ \/ ___/ __ \| |/_/ / __ `__ \/ / / / __ `__ \     
-echo               / /_/ / /  / /_/ />  </ / / / / / / /_/ / / / / / /     
-echo              / .___/_/   \____/_/|_/_/_/ /_/ /_/\__,_/_/ /_/ /_/      
-echo             /_/         
-echo              =;)i=: =)ITTTTLTTI=:i))I)TTTLLLTTTTTII)i;
-echo            +i)ii::   +)IIITI+:+i)I))TTTTLLTTTTTII))=,
-echo          :=;)i=:      ,i++::i))I)ITTTTTTTTTTIIII)=+'
-echo        .+ii)i=:      ,,::=i)))iIITTTTTTTTIIIII)=+
-echo       ,==)ii=;    ,:::=ii)i)iIIIITIIITIIII))i+:'
-echo      +=:))i==   :;=iii)+)=  `:i)))IIIII)ii+'
-echo    .+=:))iiiiiiii)))+ii;
-echo   .+=;))iiiiii)));ii+
-echo  .+=i:)))))))=+ii+
-echo .;==i+::::=)i=;
-echo ,+==iiiiii+,
-echo `+=+++;`
-echo *
-echo ************************************************************
-echo *                                                          *
-echo *        Bienvenue dans l'utilitaire video Proximum        *
-echo *                   version 2.1.2                          *
-echo *                                                          *
-echo ************************************************************
+echo *                                                                    ..;===+.
+echo *                                                                .:=iiiiii=+=
+echo *                                                             .=i))=;::+)i=+,
+echo *                                                          ,=i);)I)))I):=i=;
+echo *                                                       .=i==))))ii)))I:i++
+echo *                                                     +)+))iiiiiiii))I=i+:'
+echo *                                .,:;;++++++;:,.       )iii+:::;iii))+i='
+echo *                             .:;++=iiiiiiiiii=++;.    =::,,,:::=i));=+'
+echo *                           ,;+==ii)))))))))))ii==+;,      ,,,:=i))+=:
+echo *                         ,;+=ii))))))IIIIII))))ii===;.    ,,:=i)=i+
+echo *                        ;+=ii)))IIIIITIIIIII))))iiii=+,   ,:=));=,
+echo *                      ,+=i))IIIIIITTTTTITIIIIII)))I)i=+,,:+i)=i+
+echo "        [91m        ____  _________  _  __(_)___ ___  __  ______ ___  [0m
+echo "        [91m       / __ \/ ___/ __ \| |/_/ / __ `__ \/ / / / __ `__ \ [0m
+echo "        [91m      / /_/ / /  / /_/ />  </ / / / / / / /_/ / / / / / / [0m
+echo "        [91m     / .___/_/   \____/_/|_/_/_/ /_/ /_/\__,_/_/ /_/ /_/  [0m
+echo "        [91m    /_/                                                  [0m
+echo *                      [1;92mUtilitaire vidéo - version 2.1.2[0m  
+@REM echo *                      --------------------------------
+echo *            +i)ii::   +)IIITI+:+i)I))TTTTLLTTTTTII))=,
+echo *          :=;)i=:      ,i++::i))I)ITTTTTTTTTTIIII)=+'
+echo *        .+ii)i=:      ,,::=i)))iIITTTTTTTTIIIII)=+
+echo *       ,==)ii=;    ,:::=ii)i)iIIIITIIITIIII))i+:'
+echo *      +=:))i==   :;=iii)+)=  `:i)))IIIII)ii+'
+echo *    .+=:))iiiiiiii)))+ii;
+echo *   .+=;))iiiiii)));ii+
+echo *  .+=i:)))))))=+ii+
+echo * .;==i+::::=)i=;
+echo * ,+==iiiiii+,
+echo * `+=+++;`
+echo * 
+@REM TODO : CREER une action pour couper sans convertir une video
+@REM TODO : utiliser des techniques pour échapper les espaces sur windows ^ ou encarder par ` 
+@REM echo ************************************************************
+@REM echo *                                                          *
+@REM echo *        Bienvenue dans l'utilitaire video Proximum        *
+@REM echo *                   version 2.1.2                          *
+@REM echo *                                                          *
+@REM echo ************************************************************
+
+@REM Make random string for video
+
+setlocal enabledelayedexpansion
+set "string=abcdefghijklmnopqrstuvwxyz"
+set "randomID="
+for /L %%i in (1,1,4) do call :add
+@REM echo %randomID%
+goto :next
+:add
+set /a x=%random% %% 26
+set randomID=%randomID%!string:~%x%,1!
+goto :eof
+:next
+
 echo *  
 echo *  Cliquez sur [1;92m"Entrer"[0m à chaque étapes pour valider vos choix.
 echo *  A tout moment tapez [91mctrl+c[0m pour sortir du programme.
@@ -63,7 +80,7 @@ echo ************************************************************
 echo *
 set /p "inputFile=* Glissez et déposez la vidéo a traiter ici, puis tapez sur [92m'Entrer'[0m : "
 IF !inputFile!=="" GOTO :parametresError
-set outputFile=%inputFile:~0,-5%-convert.mp4"
+set outputFile=%inputFile:~0,-5%-%randomID%.mp4"
 
 echo * 
 echo * La vidéo à traiter sera [94m%inputFile%[0m
