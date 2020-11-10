@@ -3,7 +3,7 @@
 `curl --insecure --user username:password -T /path/to/sourcefile ftp://desthost/path/`
 
 [exemple]
-`curl --insecure --user proximum365:fNYYMi3qhu4Fr5Z -T ~/Desktop/video-converter.zip ftp://proximum365.com/public_html/tools/`
+`curl --insecure --user proximum365:fNYYMi3u4Fr5Z -T ~/Desktop/video-converter.zip ftp://proximum365.com/public_html/tools/`
 
 
 #Créer un zip d'un certain dossier 
