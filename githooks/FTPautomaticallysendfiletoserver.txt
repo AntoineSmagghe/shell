@@ -1,1 +1,0 @@
-curl --insecure --user username:password -T /path/to/sourcefile ftp://desthost/path/
