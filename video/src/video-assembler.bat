@@ -11,8 +11,7 @@ echo *
 echo *
 set /p "inputFile1=*  Glissez et déposez la première vidéo ici, puis tapez sur [92m'Entrer'[0m : "
 IF !inputFile1!=="" GOTO :parametresError
-set inputFile1=%inputFile1:"=%
-@REM set inputFile1=%inputFile1:'=\'%
+set inputFile1=%inputFile1:"='%
 set inputFile1=%inputFile1:\=\\%
 set inputFile1=%inputFile1: =\ %
 
@@ -24,8 +23,7 @@ echo ************************************************************
 echo *
 set /p "inputFile2=*  Glissez et déposez la seconde vidéo ici, puis tapez sur [92m'Entrer'[0m : "
 IF !inputFile2!=="" GOTO :parametresError
-set inputFile2=%inputFile2:"=%
-@REM set inputFile2=%inputFile2:'=\'%
+set inputFile2=%inputFile2:"='%
 set inputFile2=%inputFile2:\=\\%
 set inputFile2=%inputFile2: =\ %
 
