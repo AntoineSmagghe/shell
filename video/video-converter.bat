@@ -61,10 +61,10 @@ echo *  A tout moment tapez [91mctrl+c[0m pour sortir du programme.
 echo *  
 echo *  Que souhaitez vous faire ? 
 echo *  
-echo *  [1;94m1. Convertir/compresser une vidéo[0m
-echo *  [1;94m2. Couper et convertir/compresser une vidéo[0m
-echo *  [1;94m3. Joindre deux vidéos[0m
-echo *  [1;94m0. Sortir[0m
+echo *  [1;93m1. Convertir/compresser une vidéo[0m
+echo *  [1;93m2. Couper et convertir/compresser une vidéo[0m
+echo *  [1;93m3. Joindre deux vidéos[0m
+echo *  [1;93m0. Sortir[0m
 echo *  
 set /p choice=*  Tapez le numéro qui correspond à votre choix (1, 2 ou 3), puis tapez sur [92m"Entrer"[0m : 
 cscript //nologo src/match.js "^[1230]$" "%choice%"
