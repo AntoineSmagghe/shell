@@ -13,3 +13,4 @@
 
 [exemple]
 `git archive -9 --format=zip -o ~/Desktop/video-converter.zip HEAD:video`
+"ZIP le fichier vidéo du dossier GIT"

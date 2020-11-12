@@ -35,11 +35,11 @@ set outputFile=%inputFile1:~0,-5%-join.mp4
 
 :joinvideo
 cd src/
-echo file %inputFile1% > assembly.txt
-echo file %inputFile2% >> assembly.txt
+echo file %inputFile1% > assembly.tmp
+echo file %inputFile2% >> assembly.tmp
 echo %outputFile%
-ffmpeg.exe -f concat -safe 0 -i assembly.txt -c copy %outputFile%
-del assembly.txt
+ffmpeg.exe -f concat -safe 0 -i assembly.tmp -c copy %outputFile%
+del assembly.tmp
 GOTO :aurevoirVideo
 
 :parametresError
