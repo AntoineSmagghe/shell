@@ -17,7 +17,7 @@ echo "        [91m       / __ \/ ___/ __ \| |/_/ / __ `__ \/ / / / __ `__ \ [0
 echo "        [91m      / /_/ / /  / /_/ />  </ / / / / / / /_/ / / / / / / [0m
 echo "        [91m     / .___/_/   \____/_/|_/_/_/ /_/ /_/\__,_/_/ /_/ /_/  [0m
 echo "        [91m    /_/                                                  [0m
-echo *                      [1;92mUtilitaire vidéo - version 2.1.2[0m  
+echo *                      [1;92mUtilitaire vidéo - version 2.2.0[0m  
 @REM echo *                      --------------------------------
 echo *            +i)ii::   +)IIITI+:+i)I))TTTTLLTTTTTII))=,
 echo *          :=;)i=:      ,i++::i))I)ITTTTTTTTTTIIII)=+'
