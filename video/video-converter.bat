@@ -32,7 +32,7 @@ echo * ,+==iiiiii+,
 echo * `+=+++;`
 echo * 
 @REM TODO : CREER une action pour couper sans convertir une video
-@REM TODO : utiliser des techniques pour échapper les espaces sur windows ^ ou encarder par ` 
+@REM TODO : TROUVER une solution pour echapper les caractères spéciaux pour video assembler
 @REM echo ************************************************************
 @REM echo *                                                          *
 @REM echo *        Bienvenue dans l'utilitaire video Proximum        *
