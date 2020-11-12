@@ -36,7 +36,7 @@ echo *
 @REM echo ************************************************************
 @REM echo *                                                          *
 @REM echo *        Bienvenue dans l'utilitaire video Proximum        *
-@REM echo *                   version 2.1.2                          *
+@REM echo *                   version 2.2.0                          *
 @REM echo *                                                          *
 @REM echo ************************************************************
 
@@ -80,7 +80,7 @@ echo ************************************************************
 echo *
 set /p "inputFile=* Glissez et déposez la vidéo a traiter ici, puis tapez sur [92m'Entrer'[0m : "
 IF !inputFile!=="" GOTO :parametresError
-set outputFile=%inputFile:~0,-5%-%randomID%.mp4^"
+set outputFile=%inputFile:~0,-5%-%randomID%.mp4"
 
 echo * 
 echo * La vidéo à traiter sera [94m%inputFile%[0m
