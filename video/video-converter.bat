@@ -80,7 +80,7 @@ echo ************************************************************
 echo *
 set /p "inputFile=* Glissez et déposez la vidéo a traiter ici, puis tapez sur [92m'Entrer'[0m : "
 IF !inputFile!=="" GOTO :parametresError
-set outputFile=%inputFile:~0,-5%-%randomID%.mp4"
+set outputFile=%inputFile:~0,-5%-%randomID%.mp4^"
 
 echo * 
 echo * La vidéo à traiter sera [94m%inputFile%[0m
@@ -106,12 +106,12 @@ IF "%start%"=="" GOTO :parametresError
 IF "%end%"=="" GOTO :parametresError
 
 cd src/
-ffmpeg.exe -t %end% -i %inputFile% -ss %start% -vcodec libx264 -acodec copy -preset ultrafast -filter:v fps=fps=25 -b:v 1000k %outputFile%
+ffmpeg.exe -t %end% -i %inputFile% -ss %start% -vcodec libx264 -acodec aac -preset ultrafast -filter:v fps=fps=25 -b:v 1000k %outputFile%
 GOTO :aurevoirVideo
 
 :simpleConversion
 cd src/
-ffmpeg.exe -i %inputFile% -vcodec libx264 -acodec copy -preset ultrafast -filter:v fps=fps=25 -b:v 1000k %outputFile%
+ffmpeg.exe -i %inputFile% -vcodec libx264 -acodec aac -preset ultrafast -filter:v fps=fps=25 -b:v 1000k %outputFile%
 GOTO :aurevoirVideo
 
 :parametresError
