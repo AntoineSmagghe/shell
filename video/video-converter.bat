@@ -42,17 +42,17 @@ echo *
 
 @REM Make random string for video
 
-setlocal enabledelayedexpansion
-set "string=abcdefghijklmnopqrstuvwxyz"
-set "randomID="
-for /L %%i in (1,1,4) do call :add
-@REM echo %randomID%
-goto :next
-:add
-set /a x=%random% %% 26
-set randomID=%randomID%!string:~%x%,1!
-goto :eof
-:next
+@REM setlocal enabledelayedexpansion
+@REM set "string=abcdefghijklmnopqrstuvwxyz"
+@REM set "randomID="
+@REM for /L %%i in (1,1,4) do call :add
+@REM @REM echo %randomID%
+@REM goto :next
+@REM :add
+@REM set /a x=%random% %% 26
+@REM set randomID=%randomID%!string:~%x%,1!
+@REM goto :eof
+@REM :next
 
 echo *  
 echo *  Cliquez sur [1;92m"Entrer"[0m à chaque étapes pour valider vos choix.
@@ -80,7 +80,7 @@ echo ************************************************************
 echo *
 set /p "inputFile=* Glissez et déposez la vidéo a traiter ici, puis tapez sur [92m'Entrer'[0m : "
 IF !inputFile!=="" GOTO :parametresError
-set outputFile=%inputFile:~0,-5%-%randomID%.mp4"
+set outputFile=%inputFile:~0,-5%-convert.mp4"
 
 echo * 
 echo * La vidéo à traiter sera [94m%inputFile%[0m
