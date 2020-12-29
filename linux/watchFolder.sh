@@ -1,7 +1,7 @@
 #!/bin/bash
 # Execute function when file in folder change.
 # how to execute : 
-# ./watchFolder.sh </path/to/watch> <command>
+# ./watchFolder.sh </path/to/watch> <path or ssh address to mirror copy>
 #
 # Require entr
 #
