@@ -6,12 +6,20 @@
 # Require entr
 #
 
-# while true; do find $1 | entr -pd $2; done
-
-echo "Files to watch:" $1
+echo "Folder to watch:" $1
 echo "Folder to synchronise:" $2
 
-while true; do find $1 | entr -pd rsync -avz $1 $2; done
+rsync -avz $2 $1
 
-# exemple :
+while true; do 
+    find "$1/*" | entr -pd rsync -avz $1 $2
+done
+
+# Exemple 1 :
 # while true; do find ./* | entr -pd rsync -avz ./* antoine@julybrisson.com:files; done
+
+# Exemple 2 (Synchronise the current folder to ssh antoine@julybrisson.com:files/): 
+# rsync -avz --delete-after antoine@julybrisson.com:files/ .
+# while true; do 
+#     find ./* | entr -pd rsync -avz --delete-after . antoine@julybrisson.com:files
+# done
