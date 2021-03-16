@@ -1,5 +1,11 @@
 #!/bin/sh
 
-length=$1;
+# Simple script to get random hash
 
-random=</dev/urandom tr -dc A-Za-z0-9 | head -c $length; echo ''
+if [ -n "$1" ]; then
+	length=$1;
+else
+	length=15;
+fi
+
+tr -dc A-Za-z0-9 </dev/urandom | head -c $length; echo ''
