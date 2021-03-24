@@ -34,3 +34,5 @@ if [ ! -d "~/.local/.e2e-tmp" ]; then
 	unzip chromedriver.zip
 	rm chromedriver.zip
 fi
+
+cd /home/antoine/Documents/vimeet365/api && find /home/antoine/Documents/vimeet365/api/features | entr -s 'APP_ENV=e2e vendor/bin/behat --tags debug'

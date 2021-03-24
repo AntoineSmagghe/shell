@@ -5,7 +5,7 @@ install-e2e: ## Download and install e2e test environnement
 	./installE2eEnv.sh
 
 start-e2e: ## Build the environnemnt to launch tests locally
-	make start-e2e.docker
+	# make start-e2e.docker
 	make start-e2e.symfony
 	make start-e2e.chromedriver
 
@@ -22,7 +22,7 @@ start-e2e.chromedriver:
 
 stop-e2e: ## Stop the symfony server test env
 	make stop-e2e.symfony
-	make stop-e2e.docker
+	# make stop-e2e.docker
 
 stop-e2e.symfony:
 	cd ~/Documents/vimeet365/api && symfony server:stop
