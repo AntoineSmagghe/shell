@@ -1,5 +1,4 @@
 #!/bin/bash
-cd ..
 
 if ! which java; then
 	echo 'ERROR: Java is required !'
@@ -22,40 +21,16 @@ if ! which google-chrome; then
 	exit
 fi
 
-if [ ! -d "api/vendor/.e2e-tmp" ]; then
-	mkdir -p api/vendor/.e2e-tmp
-	cd api/vendor/.e2e-tmp/
+if [ ! -d "~/.local/.e2e-tmp" ]; then
+	mkdir -p ~/.local/.e2e-tmp
+	cd ~/.local/.e2e-tmp/
 
 	google-chrome --version | awk '{print $3}' > google-version.txt
 	googleVersion=$(cat google-version.txt)
 
 	curl -o selenium.jar -O http://selenium-release.storage.googleapis.com/3.141/selenium-server-standalone-3.141.59.jar
-	curl -o chromedriver.zip -O https://chromedriver.storage.googleapis.com/"$googleVersion"/chromedriver_linux64.zip
+	curl -o chromedriver.zip -O https://chromedriver.storage.googleapis.com/89.0.4389.23/chromedriver_linux64.zip
+	# curl -o chromedriver.zip -O https://chromedriver.storage.googleapis.com/"$googleVersion"/chromedriver_linux64.zip
 	unzip chromedriver.zip
 	rm chromedriver.zip
-	cd ../../../
 fi
-
-docker-compose up -d
-
-cd client
-npm run build
-make start &
-sleep 15
-
-cd ../api
-symfony server:stop
-APP_ENV=test symfony server:start --allow-http -d
-sleep 5
-
-cd vendor/.e2e-tmp && java -Dwebdriver.chromedriver=chromedriver -jar selenium.jar &
-sleep 5
-
-./vendor/bin/behat
-
-# kill processes
-symfony server:stop
-symfony server:start --allow-http -d
-pkill node
-pkill java
-
