@@ -39,3 +39,5 @@ stop-e2e.docker:
 	cd ~/Documents/vimeet365 && docker-compose down
 	sed -i 's/proximum_vimeet365_test/proximum_vimeet365/' ~/Documents/vimeet365/docker-compose.yaml
 	cd ~/Documents/vimeet365 && docker-compose up -d
+watch-e2e:
+	./watche2e.sh ~/Documents/vimeet365/api
