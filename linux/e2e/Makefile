@@ -4,8 +4,16 @@ help: ## Generate a help message with this comment on each commands
 install-e2e: ## Download and install e2e test environnement
 	./installE2eEnv.sh
 
+install-database: ## Create the test database for e2e tests
+	make start-e2e.docker
+	make start-e2e.symfony
+	cd ~/Documents/vimeet365/api && APP_ENV=e2e php bin/console doctrine:database:create
+	cd ~/Documents/vimeet365/api && APP_ENV=e2e php bin/console doctrine:migrations:migrate
+	cd ~/Documents/vimeet365/api && APP_ENV=e2e php bin/console hautelook:fixtures:load -n
+	make stop-e2e.symfony
+	make stop-e2e.docker
+
 start-e2e: ## Build the environnemnt to launch tests locally
-	# make start-e2e.docker
 	make start-e2e.symfony
 	make start-e2e.chromedriver
 
