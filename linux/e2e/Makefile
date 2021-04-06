@@ -21,9 +21,11 @@ start-e2e.docker:
 	cd ~/Documents/vimeet365 && docker-compose down
 	sed -i -e 's/proximum_vimeet365$$/proximum_vimeet365_test/' ~/Documents/vimeet365/docker-compose.yaml
 	cd ~/Documents/vimeet365 && docker-compose up -d
+
 start-e2e.symfony:
 	cd ~/Documents/vimeet365/api && symfony server:stop
 	cd ~/Documents/vimeet365/api && APP_ENV=e2e symfony server:start --allow-http -d
+
 start-e2e.chromedriver:
 	cd ~/.local/.e2e-tmp && java -Dwebdriver.chromedriver=chromedriver -jar selenium.jar
 	#-port 8080
@@ -35,9 +37,11 @@ stop-e2e: ## Stop the symfony server test env
 stop-e2e.symfony:
 	cd ~/Documents/vimeet365/api && symfony server:stop
 	cd ~/Documents/vimeet365/api && symfony server:start --allow-http -d
+
 stop-e2e.docker:
 	cd ~/Documents/vimeet365 && docker-compose down
 	sed -i 's/proximum_vimeet365_test/proximum_vimeet365/' ~/Documents/vimeet365/docker-compose.yaml
 	cd ~/Documents/vimeet365 && docker-compose up -d
-watch-e2e:
+
+watch-e2e: ## Watch folder for e2e tests
 	./watche2e.sh ~/Documents/vimeet365/api
