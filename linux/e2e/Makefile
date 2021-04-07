@@ -9,9 +9,13 @@ install-database: ## Create the test database for e2e tests
 	make start-e2e.symfony
 	cd ~/Documents/vimeet365/api && APP_ENV=e2e php bin/console doctrine:database:create
 	cd ~/Documents/vimeet365/api && APP_ENV=e2e php bin/console doctrine:migrations:migrate
-	cd ~/Documents/vimeet365/api && APP_ENV=e2e php bin/console hautelook:fixtures:load -n
 	make stop-e2e.symfony
 	make stop-e2e.docker
+
+purge-database:
+	make start-e2e.symfony
+	cd ~/Documents/vimeet365/api && APP_ENV=e2e php bin/console doctrine:schema:drop --force
+	cd ~/Documents/vimeet365/api && APP_ENV=e2e php bin/console doctrine:schema:create
 
 start-e2e: ## Build the environnemnt to launch tests locally
 	make start-e2e.symfony
@@ -24,6 +28,8 @@ start-e2e.docker:
 
 start-e2e.symfony:
 	cd ~/Documents/vimeet365/api && symfony server:stop
+	cd ~/Documents/vimeet365/api && symfony proxy:stop
+	cd ~/Documents/vimeet365/api && APP_ENV=e2e symfony proxy:start
 	cd ~/Documents/vimeet365/api && APP_ENV=e2e symfony server:start --allow-http -d
 
 start-e2e.chromedriver:
@@ -36,6 +42,8 @@ stop-e2e: ## Stop the symfony server test env
 
 stop-e2e.symfony:
 	cd ~/Documents/vimeet365/api && symfony server:stop
+	cd ~/Documents/vimeet365/api && symfony proxy:stop
+	cd ~/Documents/vimeet365/api && symfony proxy:start
 	cd ~/Documents/vimeet365/api && symfony server:start --allow-http -d
 
 stop-e2e.docker:
