@@ -30,7 +30,7 @@ start-e2e.symfony:
 	cd ~/Documents/vimeet365/api && symfony server:stop
 	cd ~/Documents/vimeet365/api && symfony proxy:stop
 	cd ~/Documents/vimeet365/api && APP_ENV=e2e symfony proxy:start
-	cd ~/Documents/vimeet365/api && APP_ENV=e2e symfony server:start --allow-http -d
+	cd ~/Documents/vimeet365/api && APP_ENV=e2e symfony server:start --allow-http --port 8365 -d
 
 start-e2e.chromedriver:
 	cd ~/.local/.e2e-tmp && java -Dwebdriver.chromedriver=chromedriver -jar selenium.jar
@@ -44,7 +44,7 @@ stop-e2e.symfony:
 	cd ~/Documents/vimeet365/api && symfony server:stop
 	cd ~/Documents/vimeet365/api && symfony proxy:stop
 	cd ~/Documents/vimeet365/api && symfony proxy:start
-	cd ~/Documents/vimeet365/api && symfony server:start --allow-http -d
+	cd ~/Documents/vimeet365/api && symfony server:start --allow-http --port 8365 -d
 
 stop-e2e.docker:
 	cd ~/Documents/vimeet365 && docker-compose down
