@@ -52,4 +52,4 @@ stop-e2e.docker:
 	cd ~/Documents/vimeet365 && docker-compose up -d
 
 watch-e2e: ## Watch folder for e2e tests
-	./watche2e.sh ~/Documents/vimeet365/api
+	./watche2e.sh ~/Documents/vimeet365/api ~/Documents/vimeet365/api/features
