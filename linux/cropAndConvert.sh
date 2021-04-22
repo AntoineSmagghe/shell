@@ -1,5 +1,5 @@
 #!/bin/bash
-outputMp4=$(echo "$1" | cut -f 1 -d '.')-crop.mp4
+outputMp4=${1%.*}-crop.mp4
 ffmpeg -i $1 -filter:v "crop=1860:1130:1350:330" $outputMp4
 
 outputGif=$(echo "$outputMp4" | cut -f 1 -d '.').gif

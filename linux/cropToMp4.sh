@@ -4,7 +4,7 @@
 # command to resize with ffplay : ffplay -i inputfilename -vf crop=innerWidth:innerHeight:x:y
 #
 
-outputMp4=$(echo "$1" | cut -f 1 -d '.')-crop.mp4
+outputMp4=${1%.*}-crop.mp4
 ffmpeg -i $1 -filter:v "crop=1860:980:1350:100" $outputMp4
 
 xdg-open "$outputMp4"
