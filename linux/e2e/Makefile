@@ -82,3 +82,6 @@ stop-e2e.docker:
 watch-e2e:
 	cd ${SERVER_FOLDER} && find ${SERVER_FOLDER}/features | entr -s 'APP_ENV=e2e vendor/bin/behat --tags debug'
 #./watche2e.sh ${SERVER_FOLDER} ${SERVER_FOLDER}/features
+
+e2e:
+	cd ${SERVER_FOLDER} && APP_ENV=e2e vendor/bin/behat
