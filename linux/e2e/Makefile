@@ -45,13 +45,12 @@ purge-database:
 
 ## Build the environnemnt to launch tests locally
 start-e2e:
+	make start-e2e.docker
 	make start-e2e.symfony
 	make start-e2e.chromedriver
 
 start-e2e.docker:
-	cd ~/Documents/vimeet365 && docker-compose down
-	sed -i -e 's/proximum_vimeet365$$/proximum_vimeet365_test/' ~/Documents/vimeet365/docker-compose.yaml
-	cd ~/Documents/vimeet365 && docker-compose up -d
+	cd ${SERVER_FOLDER} && docker-compose up -d
 
 start-e2e.symfony:
 	cd ${SERVER_FOLDER} && symfony server:stop
