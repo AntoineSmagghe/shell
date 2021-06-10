@@ -1,8 +1,16 @@
 #!/bin/php
 <?php
-array_shift($argv);
-$people = $argv[array_rand($argv, 1)];
+$team = [
+    'Bertrand',
+    'Emilie',
+    'Gregory',
+    'Benjamin',
+    'Ricardo',
+    'Antoine'
+];
+
+$postman = $team[array_rand($team, 1)];
 ?>
 
-La personne désignée est: <?php echo $people; ?>
+Le facteur est: <?php echo $postman; ?>
 
