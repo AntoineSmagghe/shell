@@ -8,9 +8,6 @@ $team = [
     'Ricardo',
     'Antoine'
 ];
-
-$postman = $team[array_rand($team, 1)];
 ?>
 
-Le facteur est: <?php echo $postman; ?>
-
+Le facteur est: <?php echo $team[array_rand($team, 1)]; ?> 
