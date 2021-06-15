@@ -1,29 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <string.h>
 
-#define NUMBER_OF_TEAM = 6;
+const char *team[] =
+{
+	"Emilie",
+	"Gregory",
+	"Ricardo",
+	"Bertrand",
+	"Antoine"
+};
 
-int random_postman()
+int random_number()
 {
 	srand(time(NULL));
-	int r = rand() % 6;
+	size_t n = sizeof(team)/sizeof(team[0]);
+	return rand() % n;
 }
 
-int main() 
+char main() 
 {
-	
-	
-	char team[6][10] =
-	{
-		"Antoine",
-		"Emilie",
-		"Gregory",
-		"Ricardo",
-		"Benjamin",
-		"Bertrand"
-	};
-	
-	return printf("Le facteur est: %s\n", team[r]);
+	return printf("\n\tLe facteur est: %s\n\n", team[random_number()]);
 }
