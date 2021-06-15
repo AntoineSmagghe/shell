@@ -4,7 +4,6 @@ $team = [
     'Bertrand',
     'Emilie',
     'Gregory',
-    'Benjamin',
     'Ricardo',
     'Antoine'
 ];
