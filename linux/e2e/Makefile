@@ -40,8 +40,9 @@ install-database:
 ## Purge and recreate database schema with env e2e
 purge-database:
 	make start-e2e.symfony
-	cd ${SERVER_FOLDER} && APP_ENV=e2e php bin/console doctrine:schema:drop --force
-	cd ${SERVER_FOLDER} && APP_ENV=e2e php bin/console doctrine:schema:create
+	cd ${SERVER_FOLDER} && APP_ENV=e2e symfony console doctrine:schema:drop --force
+	cd ${SERVER_FOLDER} && APP_ENV=e2e symfony console doctrine:schema:create
+	cd ${SERVER_FOLDER} && APP_ENV=e2e make load-fixtures
 
 ## Build the environnemnt to launch tests locally
 start-e2e:
@@ -59,7 +60,7 @@ start-e2e.symfony:
 	cd ${SERVER_FOLDER} && APP_ENV=e2e symfony server:start --allow-http --port 8365 -d
 
 start-e2e.chromedriver:
-	cd ~/.local/.e2e-tmp && java -Dwebdriver.chromedriver=chromedriver -jar selenium.jar
+	cd ~/.local/.e2e-tmp && java -Dwebdriver.chromedriver=chromedriver -jar selenium.jar -port 4444
 
 ## Stop the symfony server test env
 stop-e2e:
