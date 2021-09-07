@@ -7,13 +7,7 @@ cat << EOF > /home/antoine/Documents/vimeet365/client/src/components/$FILE.stori
   import { Meta, Template, Story } from '@storybook/addon-svelte-csf';
   import $FILE from './$FILE.svelte';
 
-  const defaultProps = {
-    slot:  {
-      id: 1,
-      startDate: '2021-09-10T14:19:09.221Z',
-      endDate: '2021-09-10T15:19:09.221Z',
-    }
-  };
+  const defaultProps = {};
 </script>
 
 <Meta
