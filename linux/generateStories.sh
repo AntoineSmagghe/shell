@@ -20,7 +20,6 @@ cat << EOF > /home/antoine/Documents/vimeet365/client/src/components/$FILE.stori
   <$FILE {...args} />
 </Template>
 
-<div class="w-144">
-  <Story name="Basic" args={{ ...defaultProps }} />
-</div>
+<Story name="Basic" args={{ ...defaultProps }} />
+
 EOF
