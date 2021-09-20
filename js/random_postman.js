@@ -28,7 +28,7 @@ function calculateProbability(teamArr) {
   console.log(counts);
   Array.from({ length: 1000000 }, () => randomSample(teamArr)).forEach(
     (member) => {
-		//TODO: bug ici ! 
+		//TODO: bug ici !
       console.log(counts.find((mem) => mem === member));
     }
   );
